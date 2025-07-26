@@ -3,7 +3,50 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --color-primary: #1e40af;
+  --color-primary:#e4ff38;
+}
+
+@font-face {
+  font-family: 'Antarctica-light';
+  src: url('../../public/fonts/antarctica/regular/AntarcticaBTri-ExtraCondLight.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Antarctica-bold';
+  src: url('../../public/fonts/antarctica/semi-bold/AntarcticaBTri-CondSemBd.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SuisseIntl-r';
+  src: url('../../public/fonts/suisse/regular/SuisseIntl-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SuisseIntl-m';
+  src: url('../../public/fonts/suisse/medium/SuisseIntl-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SuisseIntl-sb';
+  src: url('../../public/fonts/suisse/semi-bold/SuisseIntl-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SuisseIntl-b';
+  src: url('../../public/fonts/suisse/Bold/SuisseIntl-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
 }
 
 @theme inline {
@@ -23,5 +66,56 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'suisseIntl', sans-serif;
+}
+.font-suisse {
+  font-family: 'SuisseIntl-r', sans-serif;
+}
+.font-suisse-m {
+  font-family: 'SuisseIntl-m', sans-serif;
+}
+.font-suisse-sb {
+  font-family: 'SuisseIntl-sb', sans-serif;
+}
+.font-suisse-b {
+  font-family: 'SuisseIntl-b', sans-serif;
+}
+.font-antarctica {
+  font-family: 'Antarctica', sans-serif;
+}
+/* .button {
+  display: inline-block;
+  opacity: 1;
+  background-color: #2628b4;
+  border-radius: 12px;
+  padding: 16px 32px;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+} */
+.rolling_wrapper {
+  height: 16px;
+  flex-direction: column;
+  align-items: flex-start;
+  display: flex;
+  overflow: hidden;
+  transition: color 0.3s ease-in-out;
+  &:hover{
+    color: var(--color-primary);
+    cursor: pointer;
+  }
+  .rolling_inner_shown,.rolling_inner_hidden{
+    line-height: 1.4;
+  }
+}
+.social_icons a{
+  transition: color 0.3s ease-in-out;
+  &:hover{
+    color:var(--color-primary);
+  }
+}
+.container{
+  padding-left: 50px;
+  padding-right: 50px;
+  max-width: unset;
 }
