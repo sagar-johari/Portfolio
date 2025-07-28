@@ -3,7 +3,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --color-primary:#e4ff38;
+  --color-primary:#FF6A00  ;
 }
 
 @font-face {
@@ -81,7 +81,7 @@ body {
   font-family: 'SuisseIntl-b', sans-serif;
 }
 .font-antarctica {
-  font-family: 'Antarctica', sans-serif;
+  font-family: 'Antarctica-light', sans-serif;
 }
 /* .button {
   display: inline-block;

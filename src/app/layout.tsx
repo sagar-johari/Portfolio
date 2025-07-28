@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import AnimationProvider from "./components/AnimationProvider";
+import ResumeSticky from "./components/ui/resume-sticky";
 
 export const metadata: Metadata = {
   title: "My Portfolio",
@@ -17,6 +18,7 @@ export default function RootLayout({
       <body className={`antialiased`}>
         <AnimationProvider>
           {children}
+          <ResumeSticky />
         </AnimationProvider>
       </body>
     </html>
