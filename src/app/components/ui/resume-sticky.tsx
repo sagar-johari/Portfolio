@@ -12,7 +12,7 @@ const ResumeSticky = () => {
      
 
       {/* Static red background */}
-      <div className="w-full h-full bg-red-500 rounded-full z-[-1] absolute top-0 left-0 border-1 border-[#fff] group-hover:border-0"></div>
+      <div className="w-full h-full bg-red-500 rounded-full z-[-1] absolute top-0 left-0 group-hover:border-0"></div>
 
       {/* Plus icon */}
       <div className="relative w-full h-full flex items-center justify-center transition-opacity duration-300 group-hover:opacity-0">
