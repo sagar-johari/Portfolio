@@ -23,8 +23,8 @@ export default function RootLayout({
           <AnimationProvider>
             <CustomGSAP />
             {children}
-            {/* <ResumeSticky /> */}
-            {/* <Footer /> */}
+            <ResumeSticky />
+            <Footer />
           </AnimationProvider>
         </LenisProvider>
       </body>

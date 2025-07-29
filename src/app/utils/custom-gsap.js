@@ -17,8 +17,8 @@ export function CustomGSAP() {
 
     gsap.set(video, {
       position: "absolute",
-      bottom: 0,
-      right: "30px",
+      bottom: "60px",
+      right: "60px",
       scale: 1,
       width: "calc(100vw - 120px)",
       height: "calc(100vh - 60px)",
@@ -28,9 +28,9 @@ export function CustomGSAP() {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".section-2",
-        start: "top top",
+        start: "top 20px",
         end: "bottom top",
-        scrub: 1.5,
+        scrub: true,
         pin: true,
         pinSpacing: false,
         markers: false,
@@ -46,6 +46,28 @@ export function CustomGSAP() {
       ScrollTrigger.getAll().forEach((st) => st.kill());
     };
   }, []);
+
+  useEffect(()=>{
+    
+    const t2 = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".transition-bg",
+        start: "top 70%",
+        end: "top 30%",
+        scrub: true,
+        pin: false,
+        pinSpacing: false,
+        markers: false,
+      },
+    });
+
+    t2.to(document.querySelectorAll('.transition-bg,.transition-bg-prev'),{
+      backgroundColor: '#d8d8d8',
+      duration: 1, // optional, adjust as needed
+      ease: 'none' 
+    });
+
+  },[]);
 
   return null;
 }
