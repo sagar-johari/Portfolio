@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Header from "./components/header";
+import Slider from './components/ui/slider';
 export default function Home() {
   return (
     <div className="font-sans grid grid-rows-[auto_1fr_auto] items-center justify-items-center min-h-screen">
@@ -45,6 +46,7 @@ export default function Home() {
         </section>
         <section className="container section-3 transition-bg-prev min-h-screen flex items-end px-[20px] pb-[10%]">
           <div className="section-3-video">
+          <span className="section-subtitle">About me</span>
             <p className="text-[60px] font-suisse-r tracking-tight leading-[1] max-w-[1000px] w-[60vw]">
               Focused on making websites feel alive with motion and intent.
               <br />
@@ -64,34 +66,53 @@ export default function Home() {
               </div>
             </div>
             <div className="col-span-8">
-              <div className="flex justify-center" id="skills-list_wrapper">
-                <ul className="text-[80px] leading-[1] flex flex-col gap-[20px] skills-list">
-                  <li>React.js</li>
-                  <li>Next.js</li>
-                  <li>Express.js</li>
-                  <li>Node.js</li>
-                  <li>MongoDB</li>
-                  <li>SQL</li>
-                  <li>WebSockets</li>
-                  <li>REST API's</li>
-                  <li>TypeScript</li>
-                  <li>Javascript</li>
-                  <li>Tailwind CSS</li>
-                  <li>GSAP Animations</li>
-                  <li>Shopify</li>
-                  <li>Wordpress</li>
-                </ul>
-
-              </div>
+            <div className="flex justify-center" id="skills-list_wrapper">
+              <ul className="text-[80px] leading-[1] flex flex-col skills-list z-[999]">
+                {[
+                  "React.js",
+                  "Next.js",
+                  "Express.js",
+                  "Node.js",
+                  "MongoDB",
+                  "SQL",
+                  "WebSockets",
+                  "REST API's",
+                  "TypeScript",
+                  "Javascript",
+                  "Tailwind CSS",
+                  "GSAP Animations",
+                  "Shopify",
+                  "Wordpress"
+                ].map((skill, index) => (
+                  <li key={index}>{skill}</li>
+                ))}
+              </ul>
+            </div>
             </div>
           </div>
         </section>
-        <section className="min-h-screen">
-
+        <section className="container pt-[32vh] transition-bg-next min-h-screen bg-[#d8d8d8]">
+          <div className="grid grid-cols-12">
+                <div className="col-span-11">
+        <span className="section-subtitle">my Work</span>
+        <p className="text-[60px] font-suisse-r tracking-tight leading-[1] max-w-[800px] mb-[50px">
+        Code meets creativity in<br/> every line I write.
+            </p>
+                </div>
+                <div className="col-span-1">
+                  <a href="#">
+                  <div className="rolling_wrapper]">
+                            <div className="rolling_inner_shown">View More</div>
+                            <div className="rolling_inner_hidden" >View More</div>
+                        </div>
+                  </a>
+                </div>
+                <div className="col-span-12">
+                <Slider/>
+                </div>
+          </div>
         </section>
-        <section className="min-h-screen">
 
-        </section>
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
        

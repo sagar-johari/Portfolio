@@ -200,27 +200,26 @@ pointer-events: none
   }
 }
 
-.hover-reveal {
-  position: fixed;
-  z-index: -1;
-  width: 200px;
-  height: 280px;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  opacity: 0;
-  z-index: 9;
-  will-change: transform, filter;
+.skills-list li{
+  width: fit-content;
+  line-height: 1.2;
 }
 
-.hover-reveal__inner {
+.transition-bg-next{
+  background-color: #d8d8d8;
+}
+.rolling_wrapper{
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+[data-slider] {
+  display: flex;
   overflow: hidden;
 }
-
-.hover-reveal__img {
-  background-image: url("https://images.unsplash.com/photo-1604513656776-456fce10aeb0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODUxNDE2MDJ8&ixlib=rb-4.0.3&q=80&w=400");
-  transform: scale(1.7, 1.7);
-  background-size: cover;
-  background-position: 50% 50%;
-  z-index: 999999999;
+[data-slider] > * {
+  flex-shrink: 0;
+  width: 100%; /* Adjust width per slide as needed */
+  box-sizing: border-box;
+  padding: 0 1rem; /* Optional: space between slides */
 }
