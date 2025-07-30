@@ -27,6 +27,11 @@ export default function RootLayout({
             <Footer />
           </AnimationProvider>
         </LenisProvider>
+        <div className="hover-reveal">
+          <div className="hover-reveal__inner">
+            <div className="hover-reveal__img"></div>
+          </div>
+        </div>
       </body>
     </html>
   );

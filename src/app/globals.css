@@ -186,6 +186,8 @@ pointer-events: none
   font-size: 10px;
   letter-spacing: 1.5px;
   margin-left: 1rem;
+  display:block;
+  margin-bottom: 1rem;
   position: relative;
   font-family: 'Antarctica-bold', sans-serif;
   &::before{
@@ -196,4 +198,29 @@ pointer-events: none
     top: 50%;
     transform: translate(-100%,-50%);
   }
+}
+
+.hover-reveal {
+  position: fixed;
+  z-index: -1;
+  width: 200px;
+  height: 280px;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 9;
+  will-change: transform, filter;
+}
+
+.hover-reveal__inner {
+  overflow: hidden;
+}
+
+.hover-reveal__img {
+  background-image: url("https://images.unsplash.com/photo-1604513656776-456fce10aeb0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODUxNDE2MDJ8&ixlib=rb-4.0.3&q=80&w=400");
+  transform: scale(1.7, 1.7);
+  background-size: cover;
+  background-position: 50% 50%;
+  z-index: 999999999;
 }

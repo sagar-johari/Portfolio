@@ -55,28 +55,42 @@ export default function Home() {
           </div>
 
         </section>
-        <section className="container transition-bg text-[var(--background)] section-4 px-[20px] pt-[10vh] min-h-screen min-w-screen">
+        <section className="container transition-bg skills-section text-[var(--background)] section-4 px-[20px] pt-[40vh] max-h-screen h-screen min-w-screen">
           <div className="grid grid-cols-12">
             <div className="col-span-3">
               <div>
                 <span className="section-subtitle">my expertise</span>
-                <h2 className="capitalize text-[40px]">Tech I Work With</h2>
+                <h2 className=" text-[40px] leading-[1]">Tech I Work With</h2>
               </div>
             </div>
             <div className="col-span-8">
-              <div className="flex justify-center">
-                <ul className="text-[80px] leading-[1] flex flex-col gap-[20px]">
+              <div className="flex justify-center" id="skills-list_wrapper">
+                <ul className="text-[80px] leading-[1] flex flex-col gap-[20px] skills-list">
                   <li>React.js</li>
                   <li>Next.js</li>
+                  <li>Express.js</li>
+                  <li>Node.js</li>
+                  <li>MongoDB</li>
+                  <li>SQL</li>
+                  <li>WebSockets</li>
+                  <li>REST API's</li>
                   <li>TypeScript</li>
                   <li>Javascript</li>
+                  <li>Tailwind CSS</li>
                   <li>GSAP Animations</li>
                   <li>Shopify</li>
                   <li>Wordpress</li>
                 </ul>
+
               </div>
             </div>
           </div>
+        </section>
+        <section className="min-h-screen">
+
+        </section>
+        <section className="min-h-screen">
+
         </section>
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
