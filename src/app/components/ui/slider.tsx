@@ -30,7 +30,9 @@ export default function SliderComponent() {
       data-slider
       ref={sliderRef}
     >
-      <div className="slide">Slide 1</div>
+      <div className="slide">
+        <div className="min-h-[200px] w-full bg-[#f00] flex"></div>
+      </div>
       <div className="slide">Slide 2</div>
       <div className="slide">Slide 3</div>
       {/* ...more */}

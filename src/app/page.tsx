@@ -101,7 +101,7 @@ export default function Home() {
                 </div>
                 <div className="col-span-1">
                   <a href="#">
-                  <div className="rolling_wrapper]">
+                  <div className="rolling_wrapper">
                             <div className="rolling_inner_shown">View More</div>
                             <div className="rolling_inner_hidden" >View More</div>
                         </div>
