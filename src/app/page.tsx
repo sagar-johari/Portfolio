@@ -18,14 +18,17 @@ export default function Home() {
           </div>
           <div className="uppercase text-[8rem] flex flex-col">
             <div className=" tracking-tight font-suisse-m text-center leading-[0.8] w-fit">
-              <h1>Multi</h1>
-            <h1>Disciplinary</h1>
-            <h1 className="relative w-fit">Developer
+              <h1 className="char-split">Multi</h1>
+            <h1 className="char-split">Disciplinary</h1>
+            <span className="relative flex gap-2">
 
-            <span className="uppercase flex flex-col font-suisse text-[1rem] font-[400] tracking-normal text-left leading-[1.25] w-fit absolute right-0 bottom-0 translate-x-[100%] ps-[0.5rem] max-w-[300px]">
+            <h1 className="relative char-split w-fit">Developer
+
+            </h1>
+            <span className="uppercase flex flex-col font-suisse text-[1rem] font-[400] tracking-normal text-left leading-[1.25] w-fit  max-w-[300px]">
               <span>Blending creativity, technical expertise, and design thinking to build user‑centered digital experiences that deliver purposeful and lasting impact.</span>
             </span>
-            </h1>
+            </span>
            
             </div>
             </div>
@@ -37,17 +40,17 @@ export default function Home() {
             autoPlay 
             muted 
             loop 
-            className="w-full h-full object-cover rounded-[10px] -mt-[50px]" 
+            className="w-full h-full object-cover rounded-[10px] " 
           />
           </div>
           <div>
 
           </div>
         </section>
-        <section className="container section-3 transition-bg-prev min-h-screen flex items-end px-[20px] pb-[10%]">
+        <section className="container section-3 transition-bg-prev min-h-screen flex items-end px-[20px] pb-[10%]" id="aboutme">
           <div className="section-3-video">
           <span className="section-subtitle">About me</span>
-            <p className="text-[60px] font-suisse-r tracking-tight leading-[1] max-w-[1000px] w-[60vw]">
+            <p className="text-[60px] font-suisse-r tracking-tight leading-[1] max-w-[1000px] w-[60vw] split">
               Focused on making websites feel alive with motion and intent.
               <br />
               Obsessed with clean design, clear flow, and tiny details.
@@ -62,7 +65,7 @@ export default function Home() {
             <div className="col-span-3">
               <div>
                 <span className="section-subtitle">my expertise</span>
-                <h2 className=" text-[40px] leading-[1]">Tech I Work With</h2>
+                <h2 className=" text-[40px] leading-[1] split">Tech I Work With</h2>
               </div>
             </div>
             <div className="col-span-8">
@@ -91,28 +94,27 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="container pt-[32vh] transition-bg-next min-h-screen bg-[#d8d8d8]">
+        <section className="container pt-[3vh] transition-bg-next min-h-screen " id="work_section">
           <div className="grid grid-cols-12">
                 <div className="col-span-11">
         <span className="section-subtitle">my Work</span>
-        <p className="text-[60px] font-suisse-r tracking-tight leading-[1] max-w-[800px] mb-[50px">
+        <p className="text-[60px] font-suisse-r tracking-tight leading-[1] max-w-[800px] mb-[50px split">
         Code meets creativity in<br/> every line I write.
             </p>
                 </div>
                 <div className="col-span-1">
-                  <a href="#">
-                  <div className="rolling_wrapper]">
+                  <a href="#" className="flex h-full w-full items-end justify-end">
+                  <div className="rolling_wrapper">
                             <div className="rolling_inner_shown">View More</div>
                             <div className="rolling_inner_hidden" >View More</div>
                         </div>
                   </a>
                 </div>
-                <div className="col-span-12">
+                <div className="col-span-12 pt-[20px]">
                 <Slider/>
                 </div>
           </div>
         </section>
-
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
        

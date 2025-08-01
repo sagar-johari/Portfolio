@@ -3,9 +3,26 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --color-primary:#FF6A00  ;
+  --color-primary: #FF6A00;
 }
 
+/* [data-theme="light"] {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+[data-theme="dark"] {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+} */
+
+/* Optional: fallback to system preference if no manual theme set */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
 @font-face {
   font-family: 'Antarctica-light';
   src: url('../../public/fonts/antarctica/regular/AntarcticaBTri-ExtraCondLight.woff2') format('woff2');
@@ -49,19 +66,6 @@
   font-display: swap;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 
 body {
   background: var(--background);
@@ -206,7 +210,7 @@ pointer-events: none
 }
 
 .transition-bg-next{
-  background-color: #d8d8d8;
+  background-color: #ededed;
 }
 .rolling_wrapper{
   text-transform: uppercase;
@@ -222,4 +226,23 @@ pointer-events: none
   width: 100%; /* Adjust width per slide as needed */
   box-sizing: border-box;
   padding: 0 1rem; /* Optional: space between slides */
+}
+.resume_button_move.moved{
+  width: 300px;
+  transform: translateX(-50%);
+  .resume_back,.resume_plus_icon{
+    display:none;
+  }
+  .resume_download_button{
+    opacity: 1;
+  }
+}
+.line-mask{
+  line-height: 1.1;
+}
+.split.line {
+  transform: translateY(-0.4rem);
+}
+.char-split{
+  overflow: hidden;
 }

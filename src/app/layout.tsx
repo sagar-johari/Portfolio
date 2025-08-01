@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`antialiased max-w-[100vw] overflow-x-hidden`}>
+      <body className={`antialiased max-w-[100vw] overflow-x-hidden dark:bg-black dark:text-white`}>
         <LenisProvider>
           <AnimationProvider>
             <CustomGSAP />
