@@ -26,7 +26,7 @@ export default function Home() {
 
             </h1>
             <span className="uppercase flex flex-col font-suisse text-[1rem] font-[400] tracking-normal text-left leading-[1.25] w-fit  max-w-[300px]">
-              <span>Blending creativity, technical expertise, and design thinking to build user‑centered digital experiences that deliver purposeful and lasting impact.</span>
+              <span className="char-split-inner">Blending creativity, technical expertise, and design thinking to build user‑centered digital experiences that deliver purposeful and lasting impact.</span>
             </span>
             </span>
            

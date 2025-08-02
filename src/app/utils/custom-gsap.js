@@ -352,6 +352,36 @@ export function CustomGSAP() {
     };
   }, []);
 
+  useEffect(() => {
+    const splitInstances = [];
+  
+    document.fonts.ready.then(() => {
+      const elements = document.querySelectorAll(".char-split-inner");
+  
+      elements.forEach((el) => {
+  
+        const split = new SplitText(el, {
+          type: "lines,words",
+          wordsClass:"word",
+          linesClass:"line"
+        });
+  
+        splitInstances.push(split);
+  
+        gsap.from(split.words, {
+          y: 100,
+          duration: 0.6,
+          stagger: 0.03,
+          ease: "circ.out",
+          delay:1.8,
+        });
+      });
+    });
+  
+    return () => {
+      splitInstances.forEach((split) => split.revert());
+    };
+  }, []);
   
 
   return null;

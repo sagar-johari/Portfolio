@@ -243,6 +243,6 @@ pointer-events: none
 .split.line {
   transform: translateY(-0.4rem);
 }
-.char-split{
+.char-split,.char-split-inner .line{
   overflow: hidden;
 }
