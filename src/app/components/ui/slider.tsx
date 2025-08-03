@@ -1,58 +1,39 @@
-  "use client";
-  import React,{ useEffect, useRef } from "react";
+"use client";
+import React from "react";
 
-  export default function Slider() {
-    const sliderRef = useRef(null);
+export default function Slider() {
 
 
-    return (
-      <div id="panels">
-      <div id="panels-container" className="slider-wrapper w-full h-full flex gap-[50px]">
-        <div className="panel slide">
-          <div className="slide-content">
-            <div className="bg-[#f00] w-full h-full min-h-[calc(63vh-20px)] min-w-[calc(70vw-100px)]">
-              
-              <video 
-            src="../video/hotbuttered.mp4"  
-            autoPlay 
-            muted 
-            loop 
-            height={'100%'}
-            className="w-full h-full absolute top-0 left-0 object-cover" 
-          />
+  return (
+    <div id="panels">
+      <div
+        id="panels-container"
+        className="slider-wrapper w-full h-full flex gap-[50px]"
+      >
+        {["hotbuttered", "jindal", "3eco"].map((videoName, index) => (
+          <div
+            key={index}
+            className="panel slide followerchangetest"
+          >
+            <a href="#">
+
+            <div className="slide-content relative">
+              <div className="w-full h-full min-w-[calc(60vw-100px)] overflow-hidden relative">
+                <video
+                  src={`../video/${videoName}.mp4`}
+                  muted
+                  autoPlay
+                  loop
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
+            </a>
           </div>
-        </div>
-        <div className="panel slide">
-          <div className="slide-content">
-            <div className="bg-[#f00] w-full h-full min-h-[calc(63vh-20px)] min-w-[calc(70vw-100px)]">
-            <video 
-            src="../video/jindal.mp4"  
-            autoPlay 
-            muted 
-            loop 
-            height={'100%'}
-            className="w-full h-full absolute top-0 left-0 object-cover" 
-          />
-            </div>
-          </div>
-        </div>
-        <div className="panel slide">
-          <div className="slide-content">
-            <div className="bg-[#f00] w-full h-full min-h-[calc(63vh-20px)] min-w-[calc(70vw-100px)]">
-            <video 
-            src="../video/3eco.mp4"  
-            autoPlay 
-            muted 
-            loop 
-            height={'100%'}
-            className="w-full h-full absolute top-0 left-0 object-cover" 
-          />
-            </div>
-          </div>
-        </div>
-        <div className="space w-full h-full min-h-[100px] min-w-[calc(50px)]"></div>
+        ))}
+
+        <div className="space min-h-[100px] min-w-[60px]"></div>
       </div>
     </div>
-    );
-  }
+  );
+}

@@ -2,7 +2,7 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #000;
   --color-primary: #FF6A00;
 }
 
@@ -19,8 +19,8 @@
 /* Optional: fallback to system preference if no manual theme set */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme]) {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #000;
+    --foreground: #fff;
   }
 }
 @font-face {
@@ -194,6 +194,7 @@ pointer-events: none
   margin-bottom: 1rem;
   position: relative;
   font-family: 'Antarctica-bold', sans-serif;
+  opacity: var(--before-opacity, 1);
   &::before{
     content:'•';
     font-size: 25px;
@@ -201,8 +202,22 @@ pointer-events: none
     left: -2px;
     top: 50%;
     transform: translate(-100%,-50%);
+    animation: blink 0.6s ease-in-out infinite;
+    transition: all 0.6s ease-in-out;
   }
 }
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 
 .skills-list li{
   width: fit-content;
@@ -210,7 +225,7 @@ pointer-events: none
 }
 
 .transition-bg-next{
-  background-color: #ededed;
+  background-color: #fff;
 }
 .rolling_wrapper{
   text-transform: uppercase;
@@ -240,9 +255,78 @@ pointer-events: none
 .line-mask{
   line-height: 1.1;
 }
-.split.line {
+.split .line {
   transform: translateY(-0.4rem);
 }
-.char-split{
+.char-split,.char-split-later .line{
   overflow: hidden;
+}
+.slide-content{
+  overflow: hidden;
+  video {
+      filter: grayscale(100%);
+      transition: filter 0.3s ease;
+      &:hover {
+        filter: grayscale(0%);
+      }
+    }
+  
+}
+
+/* --- */
+
+.follower {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  pointer-events: none;
+  transform-origin: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.follower__inner__bottom,
+.follower__inner__top {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: center;
+}
+
+.follower__inner__bottom {
+  background-color: #fff;
+  opacity: 1;
+}
+
+.follower__inner__top {
+  background-color: beige;
+  opacity: 0;
+}
+
+.follower__content {
+  color: #fff;
+  font-size: 1.0625rem;
+  font-weight: 400;
+  height: 32px;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  white-space: nowrap;
+  transform-origin: center;
+}
+
+.followerchangetest,.followerchangetest a{
+  cursor: none !important;
 }
