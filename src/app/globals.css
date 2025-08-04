@@ -330,3 +330,32 @@ pointer-events: none
 .followerchangetest,.followerchangetest a{
   cursor: none !important;
 }
+
+/* Scroll Marquee Styles */
+.marquee {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.marquee__inner {
+  display: flex;
+  width: fit-content;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
+.marquee__part {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  /* padding: 0 2rem; */
+  font-size: 8rem;
+  font-weight: 600;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.scrollbar-hide::-webkit-scrollbar{
+  display:none;
+}

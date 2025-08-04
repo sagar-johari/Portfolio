@@ -323,6 +323,31 @@ export function CustomGSAP() {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
   }, []);
+  useEffect(() => {
+    document.fonts.ready.then(() => {
+      const elements = document.querySelectorAll(".fade-grid > div");
+    
+      gsap.from(elements, {
+        opacity: 0,
+        y: 30,
+        duration: 0.8,
+        stagger: 0.1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".fade-grid",
+          start: "top 80%",
+          toggleActions: "play none none none",
+          markers: false,
+        }
+      });
+    
+    });
+  
+    // Cleanup
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, []);
   
 
   useEffect(() => {

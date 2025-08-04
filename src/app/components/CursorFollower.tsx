@@ -29,7 +29,7 @@ const CursorFollower = () => {
     followerAnim.to(
       ".follower__inner__bottom",
       {
-        scale: 10,
+        scale: 5,
         backgroundColor: "#F6EFEB",
         duration: 0.15,
         height:'0.8rem',
@@ -41,7 +41,7 @@ const CursorFollower = () => {
       ".follower__inner__top",
       {
         backgroundColor: "#000",
-        scale: 10,
+        scale: 5,
         opacity: 1,
         duration: 0.15,
         height:'0.8rem',
@@ -69,7 +69,7 @@ const CursorFollower = () => {
         ]);
     
         gsap.to(".follower__inner__bottom", {
-          scale: 10,
+          scale: 5,
           backgroundColor: "#F6EFEB",
           duration: 0.15,
           height: '0.8rem',
@@ -77,7 +77,7 @@ const CursorFollower = () => {
         });
         gsap.to(".follower__inner__top", {
           backgroundColor: "#000",
-          scale: 10,
+          scale: 5,
           opacity: 1,
           duration: 0.15,
           height: '0.8rem',
