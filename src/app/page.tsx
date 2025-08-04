@@ -3,13 +3,12 @@ import Header from "./components/header";
 import Slider from './components/ui/slider';
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[auto_1fr_auto] items-center justify-items-center min-h-screen">
-      <Header/>
+    <div className="grid grid-rows-[auto_1fr_auto] items-center justify-items-center min-h-screen">
       <main className="flex flex-col row-start-2 items-center sm:items-start min-w-[100vw]">
         <section className="container min-h-[calc(100vh-70px)] flex items-center justify-center" >
           <div className="banner-bg-video w-full h-full absolute top-0 left-0 z-[-1] overflow-hidden opacity-25 bg-black">
           <video 
-            src="/video/banner-bg.mp4"  
+            src="/video/banner-bg-2.mp4"  
             autoPlay 
             muted 
             loop 
@@ -22,19 +21,17 @@ export default function Home() {
             <h1 className="char-split">Disciplinary</h1>
             <span className="relative flex gap-2">
 
-            <h1 className="relative char-split w-fit">Developer
-
-            </h1>
-            <span className="uppercase flex flex-col font-suisse text-[1rem] font-[400] tracking-normal text-left leading-[1.25] w-fit  max-w-[300px]">
-              <span className="char-split-inner">Blending creativity, technical expertise, and design thinking to build user‑centered digital experiences that deliver purposeful and lasting impact.</span>
-            </span>
+              <h1 className="relative char-split w-fit">Developer</h1>
+              <span className="uppercase flex flex-col font-suisse text-[1rem] font-[400] tracking-normal text-left leading-[1.25] w-fit  max-w-[300px]">
+                <span className="char-split-later">Blending creativity, technical expertise, and design thinking to build user‑centered digital experiences that deliver purposeful and lasting impact.</span>
+              </span>
             </span>
            
             </div>
             </div>
         </section>
-        <section className="container section-2 min-h-[calc(100vh-60px)] min-w-[calc(100vw-60px)] px-[20px] ">
-          <div className="section-2-video">
+        <section className="container section-2 min-h-[calc(100vh-60px)] min-w-[calc(100vw-60px)] px-[20px] fade-target">
+          <div className="section-2-video " >
           <video 
             src="/video/section-2.mp4"  
             autoPlay 
@@ -49,7 +46,7 @@ export default function Home() {
         </section>
         <section className="container section-3 transition-bg-prev min-h-screen flex items-end px-[20px] pb-[10%]" id="aboutme">
           <div className="section-3-video">
-          <span className="section-subtitle">About me</span>
+          <div className="section-subtitle">About me</div>
             <p className="text-[60px] font-suisse-r tracking-tight leading-[1] max-w-[1000px] w-[60vw] split">
               Focused on making websites feel alive with motion and intent.
               <br />
@@ -69,7 +66,7 @@ export default function Home() {
               </div>
             </div>
             <div className="col-span-8">
-            <div className="flex justify-center" id="skills-list_wrapper">
+            <div className="flex justify-center fade-target" id="skills-list_wrapper">
               <ul className="text-[80px] leading-[1] flex flex-col skills-list z-[999]">
                 {[
                   "React.js",
@@ -103,14 +100,14 @@ export default function Home() {
             </p>
                 </div>
                 <div className="col-span-1">
-                  <a href="#" className="flex h-full w-full items-end justify-end">
+                  <a href="/work" className="flex h-full w-full items-end justify-end">
                   <div className="rolling_wrapper">
                             <div className="rolling_inner_shown">View More</div>
                             <div className="rolling_inner_hidden" >View More</div>
                         </div>
                   </a>
                 </div>
-                <div className="col-span-12 pt-[20px]">
+                <div className="col-span-12 pt-[20px] fade-target">
                 <Slider/>
                 </div>
           </div>
