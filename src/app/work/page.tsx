@@ -1,7 +1,7 @@
 "use client";
 
-import React from "react";
-import { useRouter } from "next/navigation";
+import React, { useEffect } from "react";
+import { useRouter, usePathname } from "next/navigation";
 import ScrollMarquee from "../components/ScrollMarquee";
 
 interface WorkItem {
@@ -14,6 +14,7 @@ interface WorkItem {
 
 const Work = () => {
     const router = useRouter();
+    const pathname = usePathname();
 
     const workItems: WorkItem[] = [
         {
@@ -53,7 +54,23 @@ const Work = () => {
         }
     ];
 
+    // Restore scroll to item after modal close
+    useEffect(() => {
+      if (pathname === "/work") {
+        const itemId = sessionStorage.getItem("work-item-id");
+        if (itemId) {
+          const el = document.getElementById(`work-item-${itemId}`);
+          if (el) {
+            el.scrollIntoView({ behavior: "smooth", block: "center" });
+          }
+          sessionStorage.removeItem("work-item-id");
+        }
+      }
+    }, [pathname]);
+
     const handleWorkItemClick = (workItem: WorkItem) => {
+        // Store the clicked item's ID for scroll restoration
+        sessionStorage.setItem("work-item-id", workItem.id.toString());
         router.push(`/work/${workItem.id}`);
     };
       
@@ -65,6 +82,7 @@ const Work = () => {
         {workItems.map((item, i) => (
             <div 
               key={item.id} 
+              id={`work-item-${item.id}`}
               className="mb-4 break-inside-avoid overflow-hidden rounded-lg cursor-pointer transform hover:scale-105 transition-transform duration-300" 
               data-delay={i * 0.1}
               onClick={() => handleWorkItemClick(item)}
@@ -81,4 +99,4 @@ const Work = () => {
  );
 }
 
-export default Work
+export default Work;
