@@ -26,8 +26,8 @@ export default function RootLayout({
           <Header/>
             <CustomGSAP />
             {children}
-            <ResumeSticky />
             <Footer />
+            <ResumeSticky />
             <CursorFollower />
           </AnimationProvider>
         </LenisProvider>

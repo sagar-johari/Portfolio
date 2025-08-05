@@ -27,7 +27,7 @@ export default function ModalProjectPage({ params }: { params: Promise<{ id: str
   // Mock project data - in real app, fetch from API
   const projectData: ProjectData = {
     id: parseInt(id),
-    image: `./images/${id === "1" ? "jindal-logo.jpg" : 
+    image: `/images/${id === "1" ? "jindal-logo.jpg" : 
                     id === "2" ? "3eco.png" : 
                     id === "3" ? "react.png" : 
                     id === "4" ? "express-js.png" : "sjicon.png"}`,
@@ -109,7 +109,7 @@ export default function ModalProjectPage({ params }: { params: Promise<{ id: str
         {/* Header */}
         <div className="flex justify-between items-center p-6 border-b border-gray-200">
           <div>
-            {/* <h2 className="text-[60px] font-bold text-gray-900">{projectData.title}</h2> */}
+            <h2 className="text-[60px] font-bold text-gray-900">{projectData.title}</h2>
             <p className="text-gray-600">{projectData.category}</p>
           </div>
           <button

@@ -173,7 +173,7 @@ export function CustomGSAP() {
           trigger: "#panels-container",
           pin: "#work_section",
           pinSpacing: true,
-          start: "top 35%",
+          start: "top 40%",
           end: "bottom 0%",
           scrub: 1,
           markers: false,
@@ -190,37 +190,24 @@ export function CustomGSAP() {
   }, []);
 
   useEffect(()=>{
-    
+    const footer_trigger = document.querySelector('#contact');
       ScrollTrigger.create({
-        trigger: "footer",
+        trigger: footer_trigger,
         start: "top 80%",
         end: "top 80%",
         markers: false,
         onEnter: () => {
-          const resumeBlock = document.querySelector('.resume_block span');
           const footer = document.querySelector('.resume_button_move');
-          const targetRect = resumeBlock.getBoundingClientRect();
-          const footerRect = footer.getBoundingClientRect();
-      
-          const deltaX = targetRect.left - footerRect.left - 150;
-          const deltaY = targetRect.top - footerRect.top;
-      
+            
           gsap.to(footer, {
-            x: deltaX,
-            y: deltaY,
+            y: '20vh',
             duration: 0.3,
             ease: "none",
-            onComplete: () => {
-              footer.classList.add('moved');
-            }
           });
         },
         onEnterBack: () => {
           const footer = document.querySelector('.resume_button_move');
-          footer.classList.remove('moved');
-          // Animate back to original position (x: 0, y: 0)
           gsap.to(footer, {
-            x: '-50%',
             y: 0,
             duration: 0.3,
             ease: "none"
@@ -426,12 +413,10 @@ export function CustomGSAP() {
         document.querySelector('.resume_button_move'),
         {
           y: '100px',
-          x: '-50%',
         },
         {
           y: '0px',
-          x: '-50%',
-          duration: 0.8,
+         duration: 0.8,
           ease: "none",
           delay: 2
         }

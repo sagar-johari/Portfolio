@@ -1,5 +1,6 @@
 import Slider from './components/ui/slider';
 import Link from "next/link";
+
 export default function Home() {
   return (
     <div className="grid grid-rows-[auto_1fr_auto] items-center justify-items-center min-h-screen">
@@ -112,9 +113,6 @@ export default function Home() {
           </div>
         </section>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-       
-      </footer>
     </div>
   );
 }

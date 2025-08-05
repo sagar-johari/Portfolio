@@ -1,44 +1,55 @@
-import React from 'react'
-import { IoMail, IoCall } from "react-icons/io5";
+import React from "react";
+import { IoCall } from "react-icons/io5";
 import { SiLeetcode } from "react-icons/si";
-import { FaLinkedin ,FaGithub} from "react-icons/fa";
-import Image from 'next/image';
+import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { FiDownload } from "react-icons/fi";
+import { IoIosMail } from "react-icons/io";
+
+
+
+import Image from "next/image";
 
 const Footer = () => {
   return (
-        <footer className='container px-[20px] pt-[50px] pb-[10px] ' id='contact'>
+    <>
+    <footer className="flex justify-between flex-col min-h-screen" id="contact">
+      <div className="container  pt-[150px] pb-[10px]">
 
-            <h2 className='text-[50px] uppercase text-center split'>Let's Connect</h2>
-            <div className='grid grid-cols-12 gap-[20px] min-h-[50vh] mb-[50px] h-full relative fade-target'>
-                <div className='col-span-4 gap-[10px]  flex items-center justify-center'>
-                    <div>
-                <p className='flex items-center gap-2 hover:text-[var(--color-primary)] transition-colors duration-300 ease-in-out'><IoMail/>  
-                <a href="mailto:youremail@example.com">joharidagar53@gmail.com</a></p>
-                <p className='flex items-center gap-2 hover:text-[var(--color-primary)] transition-colors duration-300 ease-in-out'><FaGithub/>  <a href="mailto:youremail@example.com">github.com/sagar-johari</a></p>
-                <p className='flex items-center gap-2 hover:text-[var(--color-primary)] transition-colors duration-300 ease-in-out'><FaLinkedin/>  <a href="mailto:youremail@example.com">www.linkedin.com/in/sagarjohari</a></p>
-                <p className='flex items-center gap-2 hover:text-[var(--color-primary)] transition-colors duration-300 ease-in-out'><SiLeetcode/>  <a href="mailto:youremail@example.com">leetcode.com/u/codewith_sagar</a></p>
-                <p className='flex items-center gap-2 hover:text-[var(--color-primary)] transition-colors duration-300 ease-in-out'><IoCall/>  <a href="mailto:youremail@example.com">+91 8824725618</a></p>
-                    </div>
-                </div>
-                <div className='col-span-4 gap-[10px] '>
-                    <div className='footer-logo flex gap-2 items-center justify-center h-full'>
-                        
-                        <Image src="/images/sjicon.png" width={1000} height={1000} alt="" className='h-[50px] w-[50px] ratio-[1/1] rounded-full' />
-                        
-                        <div className='relative'>
-                        <h2 className='text-[42px] leading-[1]'>Sagar Johari.</h2>
-                        <span className='font-antarctica uppercase text-[14px] absolute bottom-0 left-[50%] translate-x-[-35%] translate-y-[80%] whitespace-nowrap'>Mern Stack Developer</span>
-                        </div>
-                        
-                    </div>
-                </div>
-                <div className='col-span-4 gap-[10px]  resume_block flex items-center justify-center'>
-                    <span className='h-[20px] w-[20px]'></span>
-                </div>
-                    <span className='text-[10px] h-fit absolute -bottom-[25px] left-[50%] -translate-x-[50%] translate-y-[50%] uppercase'>© 2025 All rights reserved.</span>
-            </div>
-        </footer>
-  )
-}
+      <h2 className="text-[50px] uppercase text-center split">Let's Connect</h2>
+      <div className="grid grid-cols-12 gap-[4rem]  h-full relative fade-target">
 
-export default Footer
+        <div className="col-span-12 gap-[10px]  flex items-center justify-center">
+          <div className="flex gap-4 text-[30px]">
+            <p className="flex items-center gap-2 hover:text-[var(--color-primary)] transition-colors duration-300 ease-in-out">
+              <IoIosMail />
+            </p>
+            <p className="flex items-center gap-2 hover:text-[var(--color-primary)] transition-colors duration-300 ease-in-out">
+              <FaGithub />
+            </p>
+            <p className="flex items-center gap-2 hover:text-[var(--color-primary)] transition-colors duration-300 ease-in-out">
+              <FaLinkedin />
+            </p>
+            <p className="flex items-center gap-2 hover:text-[var(--color-primary)] transition-colors duration-300 ease-in-out">
+              <SiLeetcode />
+            </p>
+            <p className="flex items-center gap-2 hover:text-[var(--color-primary)] transition-colors duration-300 ease-in-out">
+              <IoCall />
+            </p>
+          </div>
+        </div>
+        <div className="col-span-12 gap-[10px]  flex items-center justify-center">
+          <div className="uppercase rounded-full transition-opacity duration-300 text-[14px] text-white  py-[20px] px-[50px] bg-red-500 whitespace-nowrap resume_download_button">
+            Download Resume{" "}
+            <FiDownload size={14} className="inline leading-normal" />
+          </div>
+        </div>
+
+      </div>
+      </div>
+    <Image src={'/images/SAGAR_JOHARI.svg'} className="w-full " alt="bottom name" width={1200} height={1200} />
+    </footer>
+    </>
+  );
+};
+
+export default Footer;
