@@ -2,6 +2,7 @@ import React from 'react'
 import { IoMail, IoCall } from "react-icons/io5";
 import { SiLeetcode } from "react-icons/si";
 import { FaLinkedin ,FaGithub} from "react-icons/fa";
+import Image from 'next/image';
 
 const Footer = () => {
   return (
@@ -22,7 +23,7 @@ const Footer = () => {
                 <div className='col-span-4 gap-[10px] '>
                     <div className='footer-logo flex gap-2 items-center justify-center h-full'>
                         
-                        <img src="../../images/sjicon.png" alt="" className='h-[50px] w-[50px] ratio-[1/1] rounded-full' />
+                        <Image src="../../images/sjicon.png" alt="" className='h-[50px] w-[50px] ratio-[1/1] rounded-full' />
                         
                         <div className='relative'>
                         <h2 className='text-[42px] leading-[1]'>Sagar Johari.</h2>

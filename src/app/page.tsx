@@ -1,6 +1,5 @@
-import Image from "next/image";
-import Header from "./components/header";
 import Slider from './components/ui/slider';
+import Link from "next/link";
 export default function Home() {
   return (
     <div className="grid grid-rows-[auto_1fr_auto] items-center justify-items-center min-h-screen">
@@ -100,12 +99,12 @@ export default function Home() {
             </p>
                 </div>
                 <div className="col-span-1">
-                  <a href="/work" className="flex h-full w-full items-end justify-end">
+                  <Link href="/work" className="flex h-full w-full items-end justify-end">
                   <div className="rolling_wrapper">
                             <div className="rolling_inner_shown">View More</div>
                             <div className="rolling_inner_hidden" >View More</div>
                         </div>
-                  </a>
+                  </Link>
                 </div>
                 <div className="col-span-12 pt-[20px] fade-target">
                 <Slider/>

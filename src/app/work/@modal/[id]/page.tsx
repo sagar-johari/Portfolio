@@ -4,6 +4,7 @@ import React, { useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import gsap from "gsap";
 import { use } from "react";
+import Image from "next/image";
 
 interface ProjectData {
   id: number;
@@ -134,7 +135,7 @@ export default function ModalProjectPage({ params }: { params: Promise<{ id: str
         {/* Content */}
         <div className="p-6">
           <div className="mb-6">
-            <img 
+            <Image 
               src={projectData.image} 
               alt={projectData.title}
               className="w-full h-64 object-cover rounded-lg"
