@@ -41,6 +41,8 @@ const CursorFollower = () => {
       ".follower__inner__top",
       {
         backgroundColor: "#000",
+        xPercent: -50,
+        yPercent: -50,
         scale: 5,
         opacity: 1,
         duration: 0.15,
@@ -72,12 +74,16 @@ const CursorFollower = () => {
           scale: 5,
           backgroundColor: "#F6EFEB",
           duration: 0.15,
+          xPercent: -50,
+          yPercent: -50,
           height: '0.8rem',
           width: '0.8rem',
         });
         gsap.to(".follower__inner__top", {
           backgroundColor: "#000",
           scale: 5,
+          xPercent: -50,
+          yPercent: -50,
           opacity: 1,
           duration: 0.15,
           height: '0.8rem',

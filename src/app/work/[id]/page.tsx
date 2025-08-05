@@ -63,7 +63,7 @@ const ProjectPage = ({ params }: { params: Promise<{ id: string }> }) => {
         ease: "power2.out"
       })
       .to(modalRef.current, {
-        y: "80px",
+        y: "0",
         duration: 0.5,
         ease: "power2.out"
       }, "-=0.2");
@@ -108,7 +108,7 @@ const ProjectPage = ({ params }: { params: Promise<{ id: string }> }) => {
         {/* Header */}
         <div className="flex justify-between items-center p-6 border-b border-gray-200">
           <div>
-            <h2 className="text-[60px] font-bold text-gray-900">{projectData.title}</h2>
+            {/* <h2 className="text-[60px] font-bold text-gray-900">{projectData.title}</h2> */}
             <p className="text-gray-600">{projectData.category}</p>
           </div>
           <button
