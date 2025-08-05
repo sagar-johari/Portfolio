@@ -355,7 +355,8 @@ export function CustomGSAP() {
   
     document.fonts.ready.then(() => {
       const elements = document.querySelectorAll(".char-split");
-  
+      gsap.set(elements,{opacity:1});
+
       elements.forEach((el) => {
   
         const split = new SplitText(el, {
@@ -388,6 +389,7 @@ export function CustomGSAP() {
     document.fonts.ready.then(() => {
       const elements = document.querySelectorAll(".char-split-later");
   
+      gsap.set(elements,{opacity:1});
       elements.forEach((el) => {
   
         const split = new SplitText(el, {
@@ -397,7 +399,6 @@ export function CustomGSAP() {
         });
   
         splitInstances.push(split);
-  
         gsap.from(split.words, {
           y: 100,
           duration: 0.8,

@@ -23,7 +23,7 @@ const Footer = () => {
                 <div className='col-span-4 gap-[10px] '>
                     <div className='footer-logo flex gap-2 items-center justify-center h-full'>
                         
-                        <Image src="../../images/sjicon.png" alt="" className='h-[50px] w-[50px] ratio-[1/1] rounded-full' />
+                        <Image src="/images/sjicon.png" width={1000} height={1000} alt="" className='h-[50px] w-[50px] ratio-[1/1] rounded-full' />
                         
                         <div className='relative'>
                         <h2 className='text-[42px] leading-[1]'>Sagar Johari.</h2>

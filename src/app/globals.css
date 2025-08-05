@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #000;
+  --background: #000;
+  --foreground: #fff;
   --color-primary: #FF6A00;
 }
 
@@ -17,12 +17,11 @@
 } */
 
 /* Optional: fallback to system preference if no manual theme set */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme]) {
+  :root {
     --background: #000;
     --foreground: #fff;
   }
-}
+
 @font-face {
   font-family: 'Antarctica-light';
   src: url('../../public/fonts/antarctica/regular/AntarcticaBTri-ExtraCondLight.woff2') format('woff2');
@@ -65,7 +64,10 @@
   font-style: normal;
   font-display: swap;
 }
-
+.char-split,
+.char-split-later {
+  opacity: 0;
+}
 
 body {
   background: var(--background);
