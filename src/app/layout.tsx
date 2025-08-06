@@ -4,7 +4,7 @@ import AnimationProvider from "./components/AnimationProvider";
 import LenisProvider from "./components/lenisProvider";
 import ResumeSticky from "./components/ui/resume-sticky";
 import Footer from "./components/footer";
-import { CustomGSAP } from "./utils/custom-gsap";
+import CustomGSAPWrapper from '@/app/components/ClientWrapper'; // import your wrapper
 import CursorFollower from './components/CursorFollower'
 import Header from "./components/header";
 
@@ -24,7 +24,7 @@ export default function RootLayout({
         <LenisProvider>
           <AnimationProvider>
           <Header/>
-            <CustomGSAP />
+            <CustomGSAPWrapper  />
             {children}
             <Footer />
             <ResumeSticky />

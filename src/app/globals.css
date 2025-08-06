@@ -257,10 +257,27 @@ pointer-events: none
 .line-mask{
   line-height: 1.1;
 }
-.split .line {
-  transform: translateY(-0.4rem);
+.fade-grid > div{
+  opacity: 0;
 }
-.char-split,.char-split-later .line{
+/* .split .line {
+  transform: translateY(-0.4rem);
+} */
+ .marquee__inner{
+  transform:translateY(100%);
+}
+.resume_button_move{
+   transform:translateY(100px);
+  }
+  /* .fade-target{
+    opacity: 0;
+    transform:translateY(20px);
+
+ } */
+header{
+   transform:translateY(-100%);
+ }
+.char-split,.char-split-later .line,.scroll-marquee{
   overflow: hidden;
 }
 .slide-content{

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect,useRef } from "react";
+import { useEffect,useRef, useLayoutEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
@@ -284,25 +284,29 @@ export function CustomGSAP() {
   }, []);
 
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const elements = document.querySelectorAll(".fade-target");
   
     elements.forEach((el) => {
       const delay = parseFloat(el.getAttribute("data-delay")) || 0;
   
-      gsap.from(el, {
+      gsap.fromTo(el, {
+        opacity: 0,
+        y: 20,
+      },
+      {
         scrollTrigger: {
           trigger: el,
           start: "top 60%",
           toggleActions: "play none none none",
           markers: false,
         },
-        opacity: 0,
-        y: 20,
+        opacity:1,
         duration: 1,
+        y:0,
         delay: delay,
         ease: "power2.out"
-      });
+    });
     });
   
     // Cleanup
@@ -310,23 +314,23 @@ export function CustomGSAP() {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
   }, []);
-  useEffect(() => {
+  useLayoutEffect(() => {
+    const elements = document.querySelectorAll(".fade-grid > div");
     document.fonts.ready.then(() => {
-      const elements = document.querySelectorAll(".fade-grid > div");
-    
-      gsap.from(elements, {
-        opacity: 0,
-        y: 30,
-        duration: 0.8,
-        stagger: 0.1,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: ".fade-grid",
-          start: "top 80%",
-          toggleActions: "play none none none",
-          markers: false,
-        }
-      });
+      gsap.to(elements, 
+      {
+      opacity: 1,
+      stagger: 0.2,
+      ease: "none",
+      delay:2.8,
+      scrollTrigger: {
+        trigger: ".fade-grid",
+        start: "top 80%",
+        toggleActions: "play none none none",
+        markers: false,
+      }
+
+    });
     
     });
   
@@ -336,6 +340,27 @@ export function CustomGSAP() {
     };
   }, []);
   
+  useLayoutEffect(()=>{
+    const marquee__inner = document.querySelectorAll(".marquee__inner");
+    document.fonts.ready.then(() => {
+      gsap.fromTo(marquee__inner, 
+      {
+      y: '100%',
+    },
+      {
+      y: '0%',
+      duration:0.8,
+      delay:2.5,
+      ease: "none",
+    });
+    
+    });
+  
+    // Cleanup
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  },[]);
 
   useEffect(() => {
     const splitInstances = [];
@@ -401,10 +426,13 @@ export function CustomGSAP() {
     };
   }, []);
 
-  useEffect(()=>{
+  useLayoutEffect(()=>{
+    const header =document.querySelector('header');
     document.fonts.ready.then(() => {
-      gsap.from(document.querySelector('header'),{
-        y:'-100%',
+      gsap.fromTo(header,{
+        y:'-100%'
+      },{
+        y:'0%',
         duration: 0.8,
         ease: "circ.out",
         delay:2,

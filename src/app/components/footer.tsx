@@ -15,7 +15,7 @@ const Footer = () => {
     <footer className="flex justify-between flex-col min-h-screen" id="contact">
       <div className="container  pt-[150px] pb-[10px]">
 
-      <h2 className="text-[50px] uppercase text-center split">Let's Connect</h2>
+      <h2 className="text-[50px] uppercase text-center">Let's Connect</h2>
       <div className="grid grid-cols-12 gap-[4rem]  h-full relative fade-target">
 
         <div className="col-span-12 gap-[10px]  flex items-center justify-center">

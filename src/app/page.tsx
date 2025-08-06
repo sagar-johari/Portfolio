@@ -3,6 +3,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
+    <>
     <div className="grid grid-rows-[auto_1fr_auto] items-center justify-items-center min-h-screen">
       <main className="flex flex-col row-start-2 items-center sm:items-start min-w-[100vw]">
         <section className="container min-h-[calc(100vh-70px)] flex items-center justify-center" >
@@ -114,5 +115,6 @@ export default function Home() {
         </section>
       </main>
     </div>
+    </>
   );
 }
