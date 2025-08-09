@@ -2,8 +2,12 @@
 
 import { useEffect } from 'react';
 import gsap from 'gsap';
+import { usePathname } from 'next/navigation';
+
 
 const CursorFollower = () => {
+  const pathname = usePathname();
+
   useEffect(() => {
     // Set up the follower position
     gsap.set(".follower", { xPercent: -50, yPercent: -50 });
@@ -131,7 +135,7 @@ const CursorFollower = () => {
         item.removeEventListener("mouseleave", () => animateFollower("out"));
       });
     };
-  }, []);
+  }, [pathname]);
 
   return (
     <>

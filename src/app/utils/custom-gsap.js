@@ -14,6 +14,62 @@ export function CustomGSAP() {
   const hoverRevealRef = useRef(null);
 
   useEffect(() => {
+    const rollingWrappers = document.querySelectorAll(".rolling_wrapper");
+    const timelines = [];
+    const splitInstances = [];
+
+    rollingWrappers.forEach((wrapper) => {
+      const titleA = wrapper.querySelector(".rolling_inner_shown");
+      const titleAA = wrapper.querySelector(".rolling_inner_hidden");
+
+      if (!titleA || !titleAA) return;
+
+      // Split text and store instances
+      const split = new SplitText(titleA, { type: "chars" });
+      const splitb = new SplitText(titleAA, { type: "chars" });
+
+      splitInstances.push(split, splitb);
+
+      const tl = gsap.timeline({ paused: true });
+
+      tl.fromTo(
+        split.chars,
+        { y: "0%" },
+        { duration: 0.3, y: "-100%", stagger: 0.02 }
+      );
+
+      tl.fromTo(
+        splitb.chars,
+        { y: "100%" },
+        { duration: 0.3, y: "-100%", stagger: 0.02 },
+        "<"
+      );
+
+      const handleMouseEnter = () => tl.play();
+      const handleMouseLeave = () => tl.reverse();
+
+      wrapper.addEventListener("mouseenter", handleMouseEnter);
+      wrapper.addEventListener("mouseleave", handleMouseLeave);
+
+      wrapper._cleanup = () => {
+        wrapper.removeEventListener("mouseenter", handleMouseEnter);
+        wrapper.removeEventListener("mouseleave", handleMouseLeave);
+      };
+
+      timelines.push(tl);
+    });
+
+    // CLEANUP
+    return () => {
+      rollingWrappers.forEach((wrapper) => {
+        if (wrapper._cleanup) wrapper._cleanup();
+      });
+      timelines.forEach((tl) => tl.kill());
+      splitInstances.forEach((split) => split.revert()); // <== THIS LINE FIXES NESTING ISSUE
+    };
+  }, []);
+
+  useEffect(() => {
     const video = document.querySelector(".section-2 video");
     if (!video) return;
 
@@ -339,28 +395,7 @@ export function CustomGSAP() {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
   }, []);
-  
-  useLayoutEffect(()=>{
-    const marquee__inner = document.querySelectorAll(".marquee__inner");
-    document.fonts.ready.then(() => {
-      gsap.fromTo(marquee__inner, 
-      {
-      y: '100%',
-    },
-      {
-      y: '0%',
-      duration:0.8,
-      delay:2.5,
-      ease: "none",
-    });
-    
-    });
-  
-    // Cleanup
-    return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-    };
-  },[]);
+
 
   useEffect(() => {
     const splitInstances = [];
@@ -434,8 +469,8 @@ export function CustomGSAP() {
       },{
         y:'0%',
         duration: 0.8,
-        ease: "circ.out",
-        delay:2,
+        ease: "power2.inOut",
+        delay:1,
       });
       gsap.fromTo(
         document.querySelector('.resume_button_move'),
@@ -445,8 +480,8 @@ export function CustomGSAP() {
         {
           y: '0px',
          duration: 0.8,
-          ease: "none",
-          delay: 2
+          ease: "power2.inOut",
+          delay: 1
         }
       );
       

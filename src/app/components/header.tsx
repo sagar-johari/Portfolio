@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import { TfiFaceSmile } from "react-icons/tfi";
 import Image from "next/image";
@@ -13,16 +14,10 @@ const header = () => {
             <nav className="flex items-end justify-center">
                 <ul className="flex gap-[1.5rem] text-[12px] font-[500] uppercase ">
                     <li>
-                        <a href="#aboutme" className="scroll-link rolling_wrapper">
-                            <div className="rolling_inner_shown">About</div>
-                            <div className="rolling_inner_hidden" >About</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#work_section" className="scroll-link rolling_wrapper">
+                        <Link href={'/work'} className="rolling_wrapper">
                             <div className="rolling_inner_shown">Work</div>
                             <div className="rolling_inner_hidden" >Work</div>
-                        </a>
+                        </Link>
                     </li>
                     <li>
                         <a href="#contact" className="scroll-link rolling_wrapper">

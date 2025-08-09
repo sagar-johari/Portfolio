@@ -1,4 +1,6 @@
+"use client"
 import React from "react";
+import { useEffect,useState } from "react";
 import { IoCall } from "react-icons/io5";
 import { SiLeetcode } from "react-icons/si";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
@@ -10,10 +12,23 @@ import { IoIosMail } from "react-icons/io";
 import Image from "next/image";
 
 const Footer = () => {
+  const [height, setHeight] = useState(0);
+
+  useEffect(() => {
+    const header = document.querySelector("header");
+    if (header) {
+      setHeight(header.offsetHeight);
+    }
+    const handleResize = () => {
+      if (header) setHeight(header.offsetHeight);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   return (
     <>
-    <footer className="flex justify-between flex-col min-h-screen" id="contact">
-      <div className="container  pt-[150px] pb-[10px]">
+    <footer className="flex justify-between flex-col min-h-screen" style={{ minHeight: `calc(100vh - ${height}px)` }} id="contact">
+      <div className="container my-auto pb-[10px]">
 
       <h2 className="text-[50px] uppercase text-center">Let's Connect</h2>
       <div className="grid grid-cols-12 gap-[4rem]  h-full relative fade-target">
